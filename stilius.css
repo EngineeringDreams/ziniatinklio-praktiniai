@@ -6,20 +6,29 @@ body {
     margin: 0;
     line-height: 1.6;
 }
+html{
+    background: repeating-linear-gradient(
+    45deg, #65daec, #06a5c5 15%, #20f3f0 20%
+    );
+}
+
 
 #page {
-    width: 90%;
-    max-width: 1100px;
+    width: 100%;
     margin: 20px auto;
-    background-color: white;
+    background: repeating-linear-gradient(
+    45deg, #65daec, #06a5c5 15%, #20f3f0 20%
+    );
     box-shadow: 0 0 10px #ccd2d8;
+    height: 100%;
 }
 
 header {
-    background-color: #17324d;
+    background-color: #496d91;
     color: white;
     padding: 25px;
     text-align: center;
+    
 }
 
 header h1 {
@@ -29,6 +38,7 @@ header h1 {
 .subheader {
     margin: 5px 0 0 0;
     color: inherit; 
+    
 }
 
 #menu {
@@ -62,19 +72,22 @@ header h1 {
 #content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    padding: 25px;
+    gap: 10px;
+    padding: 10px;
 }
 
 aside {
-    background-color: #e7f0f6;
+    background-color: inherit;
     padding: 15px;
     border-left: 4px solid #24577a;
+    width: 400px;
+    box-sizing: border-box;
 }
 
 article {
     min-width: 0;
 }
+
 
 h2, h3 {
     color: #17324d;
@@ -88,6 +101,10 @@ article a {
     color: #24577a;
 }
 
+#aside{
+    font-style: italic;
+    width:400px;
+}
 
 p {
     color: #333 !important;
@@ -100,7 +117,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #b8c5ce;
+    border: 1px solid black;
     padding: 10px;
     text-align: left;
 }
@@ -111,11 +128,12 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f0f5f8;
+    background-color: inherit;
 }
 
 .gallery-content {
-    display: block !important;
+    display: block;
+    min-width: 600px;
 }
 
 .gallery {
@@ -133,7 +151,7 @@ tr:nth-child(even) {
 }
 
 .gallery img {
-    width: 100%;
+    width: 290px;
     height: 170px;
     object-fit: cover;
     display: block;
@@ -146,6 +164,10 @@ tr:nth-child(even) {
 
 form {
     max-width: 600px;
+}
+#reklama{
+    width:80%;
+
 }
 
 form label {
@@ -226,5 +248,32 @@ footer p {
     #menu ul {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+
+
+body:has(.gallery-content) #page > aside {
+    box-sizing: border-box;
+    float: left;
+    width: calc(33.333% - 7px);
+    margin: 20px 0 0 20px;
+}
+
+body:has(.gallery-content) .gallery-content {
+    margin-left: 33.333%;
+    padding: 20px 20px 20px 10px;
+}
+
+@media (max-width: 700px) {
+    body:has(.gallery-content) #page > aside {
+        float: none;
+        width: auto;
+        margin: 20px 20px 0;
+    }
+
+    body:has(.gallery-content) .gallery-content {
+        margin-left: 0;
+        padding: 20px;
     }
 }
