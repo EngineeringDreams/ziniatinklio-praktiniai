@@ -1,6 +1,8 @@
-*{
+/*bendra taisykle visiems elementams*/
+* {
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     color: #263238;
@@ -8,14 +10,16 @@ body {
     margin: 0;
     line-height: 1.6;
 }
+
 #page {
     max-width: 1100px;
     margin: 25px auto;
     background-color: white;
     box-shadow: 0 3px 14px #cbd5df;
     border-radius: 8px;
-    overflow: hidden;
+    
 }
+/*pavadinimo, subpavadinimo ir meniu taisykles*/
 header {
     background-color: #315b7d;
     color: white;
@@ -28,9 +32,9 @@ header h1 {
     font-size: 32px;
 }
 
-.subheader {
+.subheader {/*panaudotas important*/
     margin: 6px 0 0;
-    color: #e4edf5 !important;
+    color: #e4edf5 !important; /*taisykle laikoma svarbesne uz kitas. nepazymetos taisykles laikomos maziau svarbiomis*/
     font-style: italic;
 }
 
@@ -42,8 +46,7 @@ header h1 {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
+    
     justify-content: center;
 }
 
@@ -58,6 +61,7 @@ header h1 {
 #menu a:hover {
     background-color: #477da5;
 }
+/*puslapio turinio taisykles*/
 #content {
     display: grid;
     grid-template-columns: minmax(190px, 1fr) minmax(0, 2.2fr);
@@ -100,6 +104,7 @@ p {
 article a {
     color: #245f8b;
 }
+/*lenteles taisykles (zr. Komponentai.html)*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -128,6 +133,7 @@ tr:nth-child(even) {
     margin-top: 12px;
     border-radius: 5px;
 }
+/*galerijos ir jos nuotrauku taisykles*/
 .gallery-content {
     display: block;
     
@@ -144,9 +150,6 @@ body:has(.gallery-content) .gallery-content {
     margin-left: 25%;
     padding: 25px;
 }
-.gallery-content{
-    width: 800px;
-}
 
 .gallery {
     display: grid;
@@ -155,9 +158,14 @@ body:has(.gallery-content) .gallery-content {
     margin-top: 20px;
     width: 100%;
 }
+   .gallery-article {
+    width: 700px;
+    margin: 0 auto;
+}
 
 .gallery figure {
     min-width: 0;
+    width: 100%;
     margin: 0;
     border: 1px solid #d5dfe7;
     background-color: #f8fafc;
@@ -167,7 +175,7 @@ body:has(.gallery-content) .gallery-content {
 }
 
 .gallery img {
-    
+    width: 100%;
     height: 170px;
     object-fit: cover;
     display: block;
@@ -178,7 +186,7 @@ body:has(.gallery-content) .gallery-content {
     padding: 8px 2px 2px;
     text-align: center;
 }
-
+/*anketos taisykles*/
 form {
     max-width: 600px;
 }
@@ -188,7 +196,7 @@ form label {
     margin-top: 12px;
     font-weight: bold;
 }
-
+/*panaudotas inherit*/
 form input[type="text"],
 form input[type="email"],
 form input[type="number"],
@@ -200,7 +208,7 @@ form textarea {
     border: 1px solid #bdcbd7;
     border-radius: 5px;
     margin-top: 4px;
-    font: inherit;
+    font: inherit; /*perima font is body*/ 
     background-color: #fff;
 }
 
@@ -240,9 +248,58 @@ footer {
     text-align: center;
     padding: 14px;
 }
-
+/*panaudotas important*/
 footer p {
     color: white !important;
     margin: 0;
 }
+/*responsive dizaino taisykles (nenaudojamos dabar)*/
+/*@media (max-width: 750px) {
+    #page {
+        margin: 0;
+        border-radius: 0;
+    }
 
+    #content {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .gallery-content {
+        padding: 18px;
+    }
+
+    body:has(.gallery-content) #page > aside {
+        float: none;
+        width: auto;
+        margin: 18px 18px 0;
+    }
+
+    body:has(.gallery-content) .gallery-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #menu ul {
+        flex-direction: row;
+    }
+
+    #menu a {
+        padding: 11px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+}
+*/
